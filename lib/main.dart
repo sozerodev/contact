@@ -15,8 +15,48 @@ class MyApp extends StatelessWidget {
     // 메인 페이지 디자인을 여기서!
     // 위젯 짜집기!
     return MaterialApp(
-      home: Center(
-        child : Container( width:50, height:50, color: Colors.blue )
+      // MaterialApp.. 구글이 제공하는 Material테마를 이용할 수 있다.
+      // 하지만 구글 스타일임.
+      // 아이폰 테마로 사용하고 싶다면 Cupertino
+      // 커스터마이징 하고싶다면 그래도 MaterialApp()을 써야 함. 거기서 Google 스타일만 따로 빼면 된다.
+      home : Center(
+        // child : Container( width:50, height:50, color: Colors.blue )
+        child : Scaffold(
+          // Scaffold란, 앱을 상중하로 나눠주는 위젯.
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text('demo app'),
+          ),
+          body : Row(
+                // Row()대신 Column()을 쓰는 것도 가능
+            mainAxisAlignment: MainAxisAlignment.center, // display : flex와 유사.
+              // Row의 mainAxis는 가로축 정렬, Column의 mainAxis는 세로축 정렬
+            // crossAxisAlignment: CrossAxisAlignment.center,  // 반대축(row:세로축, column:가로축) 정렬
+
+            children: [
+              Text('test'),
+              Icon(Icons.star),
+              Icon(Icons.star)
+            ],
+          ),
+          bottomNavigationBar: BottomAppBar(
+            // child : Text('this is bottom')
+            child:
+            Container(
+              height: 60,
+              child : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                // mainAxisSize: MainAxisSize.max,
+                children: [
+                  Icon(Icons.phone),
+                  Icon(Icons.message),
+                  Icon(Icons.contact_page),
+                ],
+              ),
+            ),
+          )
+        )
+
       )
 
       // 박스 위젯 => Container() || SizedBox()

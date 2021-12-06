@@ -21,8 +21,10 @@ class MyApp extends StatelessWidget {
 
       // 박스 위젯 => Container() || SizedBox()
         // 스타일을 줄 땐 (스타일명 : 값)
-        // Flutter의 사이즈 단위는 px이 아닌 LP
-      // 자식 위젯의 기준점을 중앙으로 설정해주는 위젯 => Center()
+        // Flutter의 사이즈 단위는 px이 아닌 LP(Logical Pixel)
+        // px로 넣지 않는 이유는 기기마다 픽셀의 절대적인 크기가 다르기 떄문.
+        // LP는 우리가 눈으로 보는 절대적인 수치.. 1cm는 38LP
+      // 자식 위젯의 기준점을 중앙으로 설정해주는 위젯 => Center() || Align()
 
       // 이미지 위젯 => Image.asset('경로')
         // 이미지를 쓸 때에는 쓰겠다고 등록도 해야 함.

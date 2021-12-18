@@ -41,8 +41,7 @@ class MyApp extends StatelessWidget {
           ),
           bottomNavigationBar: BottomAppBar(
             // child : Text('this is bottom')
-            child:
-            Container(
+            child: SizedBox( // Container 대신에 SizedBox를 사용 가능. Container라는 위젯이 SizedBox에 비해 조금 무겁다 함.
               height: 60,
               child : Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -27,17 +27,33 @@ class MyApp extends StatelessWidget {
             centerTitle: true,
             title: Text('demo app'),
           ),
-          body : Row(
-                // Row()대신 Column()을 쓰는 것도 가능
-            mainAxisAlignment: MainAxisAlignment.center, // display : flex와 유사.
-              // Row의 mainAxis는 가로축 정렬, Column의 mainAxis는 세로축 정렬
-            // crossAxisAlignment: CrossAxisAlignment.center,  // 반대축(row:세로축, column:가로축) 정렬
+          body : Align( // 가운데 정렬하고싶으면 Center()위젯을 사용하면 됨
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width : double.infinity, // 화면에 꽉 차게 width값을 준다.
+              height : 50,
+              // margin : EdgeInsets.all(20),
+              margin : EdgeInsets.fromLTRB(0, 20, 10, 20), // 부분적으로 margin을 주고싶을 때
+              padding : EdgeInsets.all(20),
+              // 찌끄레기 속성들 넣어주기!
+              decoration: BoxDecoration(
+                color : Colors.blue,
+                border: Border.all(color : Colors.black)
+              ),
 
-            children: [
-              Text('test'),
-              Icon(Icons.star),
-              Icon(Icons.star)
-            ],
+              child: Row(
+                    // Row()대신 Column()을 쓰는 것도 가능
+                mainAxisAlignment: MainAxisAlignment.center, // display : flex와 유사.
+                  // Row의 mainAxis는 가로축 정렬, Column의 mainAxis는 세로축 정렬
+                // crossAxisAlignment: CrossAxisAlignment.center,  // 반대축(row:세로축, column:가로축) 정렬
+
+                children: [
+                  Text('testt'),
+                  Icon(Icons.star),
+                  Icon(Icons.star)
+                ],
+              ),
+            ),
           ),
           bottomNavigationBar: BottomAppBar(
             // child : Text('this is bottom')
